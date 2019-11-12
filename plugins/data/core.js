@@ -61,11 +61,11 @@ module.exports = {
 				req.session.transaction++;
 
 				// remove the temporary file
-				fs.exists(file, (exists) => {
-					if (exists) fs.unlink(file, (err) => {
-						if (err) res.log.warn('Failed to unlink file "' + file + '": ' + err);
-					});
-				});
+				//fs.exists(file, (exists) => {
+				//	if (exists) fs.unlink(file, (err) => {
+				//		if (err) res.log.warn('Failed to unlink file "' + file + '": ' + err);
+				//	});
+				//});
 
 			}, true);
 
