@@ -51,9 +51,11 @@ module.exports = {
 			req.stream.removeAllListeners();
 			req.session.connection.continue();
 
+			res.log.verbose('Checking if file "' + file + '" exists? -> [' + fs.existsSync(file) + ']');
 			// emit the internal 'queue' event
 			req.session.emit('queue', file, () => {
 
+				res.log.verbose('Inside queue callback for file: "' + file + '"');
 				// reset the transaction
 				req.session.resetTransaction();
 				
